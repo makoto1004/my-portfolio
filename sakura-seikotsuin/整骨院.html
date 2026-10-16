@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="大阪市北区のさくら整骨院。交通事故後のむちうちや身体の不調についてご相談ください。自賠責保険の適用条件を満たす場合、自己負担0円で施術を受けられます。">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="交通事故・むちうちのご相談｜さくら整骨院">
+  <meta property="og:description" content="大阪市北区のさくら整骨院。交通事故後のむちうちや身体の不調についてご相談ください。">
+  <meta property="og:type" content="website">
+  <!-- TODO: 実際のサイトURLに差し替え -->
+  <meta property="og:url" content="https://example.com/">
+  <!-- TODO: 実際のOGP画像URLに差し替え -->
+  <meta property="og:image" content="https://placehold.co/1200x630/eef7f3/1f6450?text=%E3%81%95%E3%81%8F%E3%82%89%E6%95%B4%E9%AA%A8%E9%99%A2">
+  <meta property="og:site_name" content="さくら整骨院">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="交通事故・むちうちのご相談｜さくら整骨院">
+  <meta name="twitter:description" content="大阪市北区のさくら整骨院。交通事故後のむちうちや身体の不調についてご相談ください。">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/eef7f3/1f6450?text=%E3%81%95%E3%81%8F%E3%82%89%E6%95%B4%E9%AA%A8%E9%99%A2">
+  <title>交通事故・むちうちのご相談｜さくら整骨院</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sakura: {
+              DEFAULT: "#2d8a6e",
+              dark: "#1f6450",
+              pale: "#eef7f3",
+              line: "#dcebe5"
+            }
+          },
+          fontFamily: {
+            sans: ['"Hiragino Sans"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', '"YuGothic"', "Meiryo", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; }
+    /* Safari で details の標準マーカー（三角）を非表示にする */
+    summary::-webkit-details-marker { display: none; }
+    @media (max-width: 767px) {
+      html { scroll-padding-top: 4.5rem; }
+      body { padding-bottom: 4.5rem; }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-700 antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-sakura-line bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+      <a href="#top" class="flex items-center gap-2 text-lg font-bold tracking-wide text-sakura-dark" aria-label="さくら整骨院 トップ">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-sakura-pale text-sakura" aria-hidden="true">桜</span>
+        <span>さくら整骨院</span>
+      </a>
+      <nav id="site-nav" class="absolute left-0 right-0 top-full hidden border-b border-sakura-line bg-white p-4 shadow-lg md:static md:block md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="メインナビゲーション">
+        <div class="flex flex-col gap-1 md:flex-row md:items-center md:gap-5">
+          <a class="nav-link rounded px-3 py-2 text-sm hover:bg-sakura-pale hover:text-sakura-dark" href="#symptoms">症状</a>
+          <a class="nav-link rounded px-3 py-2 text-sm hover:bg-sakura-pale hover:text-sakura-dark" href="#reasons">選ばれる理由</a>
+          <a class="nav-link rounded px-3 py-2 text-sm hover:bg-sakura-pale hover:text-sakura-dark" href="#flow">施術の流れ</a>
+          <a class="nav-link rounded px-3 py-2 text-sm hover:bg-sakura-pale hover:text-sakura-dark" href="#price">料金</a>
+          <a class="nav-link rounded px-3 py-2 text-sm hover:bg-sakura-pale hover:text-sakura-dark" href="#simulator">料金試算</a>
+          <a class="nav-link rounded px-3 py-2 text-sm hover:bg-sakura-pale hover:text-sakura-dark" href="#access">アクセス</a>
+          <!-- TODO: 実際の電話番号に差し替え -->
+          <a href="tel:06-0000-0000" class="nav-link mt-2 inline-flex items-center justify-center rounded-full bg-sakura px-5 py-2.5 text-sm font-bold text-white hover:bg-sakura-dark md:mt-0">電話する</a>
+        </div>
+      </nav>
+      <button id="menu-toggle" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-sakura-line text-sakura-dark md:hidden" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top" class="pt-16">
+    <section id="hero" class="scroll-mt-20 overflow-hidden bg-gradient-to-b from-sakura-pale to-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
+        <div class="relative z-10">
+          <p class="mb-4 inline-flex rounded-full border border-sakura-line bg-white px-4 py-2 text-sm font-semibold text-sakura-dark">大阪府大阪市北区｜交通事故・むちうちのご相談</p>
+          <h1 class="text-3xl font-bold leading-relaxed tracking-wide text-slate-800 sm:text-4xl lg:text-5xl">交通事故のつらい痛み、<br class="hidden sm:block">我慢していませんか？</h1>
+          <p class="mt-5 text-lg font-semibold leading-8 text-sakura-dark">交通事故・むちうち専門<br>自賠責保険対応で自己負担0円<sup class="ml-1 text-xs">*</sup></p>
+          <p class="mt-1 text-xs text-slate-500">*自賠責保険の適用条件を満たす場合</p>
+          <p class="mt-5 max-w-xl leading-7 text-slate-600">事故後の首・肩・腰の痛みや、頭痛など身体の不調についてお話を伺います。状態や保険のことも、まずはお気軽にご相談ください。</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#reservation" class="inline-flex items-center justify-center rounded-full bg-sakura px-7 py-4 font-bold text-white shadow-sm transition hover:bg-sakura-dark">無料相談はこちら <span class="ml-2" aria-hidden="true">→</span></a>
+            <!-- TODO: 実際の電話番号に差し替え -->
+            <a href="tel:06-0000-0000" class="inline-flex items-center justify-center rounded-full border border-sakura bg-white px-7 py-4 font-bold text-sakura-dark hover:bg-sakura-pale">電話で相談する</a>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">相談無料・予約優先制です。費用や施術内容は状態を確認してご案内します。</p>
+        </div>
+        <div class="relative">
+          <!-- TODO: 実際の院内・施術イメージに差し替え -->
+          <img src="https://placehold.co/800x620/e4f1ec/1f6450?text=%E3%81%95%E3%81%8F%E3%82%89%E6%95%B4%E9%AA%A8%E9%99%A2" alt="さくら整骨院の院内イメージ" width="800" height="620" class="w-full rounded-[2rem] object-cover shadow-xl">
+          <div class="absolute -bottom-5 left-4 rounded-2xl border border-sakura-line bg-white px-5 py-4 shadow-lg sm:left-auto sm:right-4">
+            <p class="text-sm font-bold text-sakura-dark">事故後のお悩みを丁寧にお聞きします</p>
+            <p class="mt-1 text-xs text-slate-500">大阪市北区の交通事故相談窓口</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="symptoms" class="scroll-mt-20 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">CHECK</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">こんな症状でお悩みの方へ</h2>
+          <p class="mt-4 leading-7 text-slate-600">交通事故のあと、時間が経ってから不調を感じることもあります。気になる症状があればご相談ください。</p>
+        </div>
+        <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="flex items-center gap-3 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm"><svg class="h-6 w-6 shrink-0 text-sakura" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7 12 3.2 3.2L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-medium">首や肩が痛む・重い</span></li>
+          <li class="flex items-center gap-3 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm"><svg class="h-6 w-6 shrink-0 text-sakura" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7 12 3.2 3.2L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-medium">頭痛やめまいがある</span></li>
+          <li class="flex items-center gap-3 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm"><svg class="h-6 w-6 shrink-0 text-sakura" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7 12 3.2 3.2L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-medium">腰や背中が痛む</span></li>
+          <li class="flex items-center gap-3 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm"><svg class="h-6 w-6 shrink-0 text-sakura" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7 12 3.2 3.2L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-medium">手足のしびれがある</span></li>
+          <li class="flex items-center gap-3 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm"><svg class="h-6 w-6 shrink-0 text-sakura" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7 12 3.2 3.2L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-medium">天気が悪いと痛みが強くなる</span></li>
+          <li class="flex items-center gap-3 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm"><svg class="h-6 w-6 shrink-0 text-sakura" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7 12 3.2 3.2L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-medium">病院で異常なしと言われたが痛みが続く</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="reasons" class="scroll-mt-20 bg-sakura-pale py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">REASONS</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">当院が選ばれる5つの理由</h2>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-sakura-line bg-white p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sakura-pale text-sakura"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5l-8-3Z"/><path d="m8 12 2.5 2.5L16 9"/></svg></div>
+            <h3 class="mt-4 font-bold text-slate-800">自賠責保険に対応</h3><p class="mt-2 text-sm leading-6 text-slate-600">適用条件を満たす場合、窓口での自己負担なく施術を受けられます。保険の適用についてご説明します。</p>
+          </article>
+          <article class="rounded-2xl border border-sakura-line bg-white p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sakura-pale text-sakura"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v18M4.9 6.5l14.2 11M19.1 6.5 4.9 17.5"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <h3 class="mt-4 font-bold text-slate-800">交通事故のご相談に対応</h3><p class="mt-2 text-sm leading-6 text-slate-600">事故後の症状や通院について、一人ひとりの状態を確認しながらご案内します。</p>
+          </article>
+          <article class="rounded-2xl border border-sakura-line bg-white p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sakura-pale text-sakura"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 5h16v12H8l-4 4V5Z"/><path d="M8 9h8M8 13h5"/></svg></div>
+            <h3 class="mt-4 font-bold text-slate-800">保険会社とのやり取りをサポート</h3><p class="mt-2 text-sm leading-6 text-slate-600">連絡時に確認する内容や手続きの流れをお伝えします。必要に応じて相談先をご案内します。</p>
+          </article>
+          <article class="rounded-2xl border border-sakura-line bg-white p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sakura-pale text-sakura"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h.01M15 10h.01M9 14h.01M15 14h.01M10 21v-4h4v4"/></svg></div>
+            <h3 class="mt-4 font-bold text-slate-800">整形外科との併院も相談可</h3><p class="mt-2 text-sm leading-6 text-slate-600">医療機関での診察や併院についてご相談いただけます。受診状況に応じてご案内します。</p>
+          </article>
+          <article class="rounded-2xl border border-sakura-line bg-white p-6 sm:col-span-2 lg:col-span-1">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sakura-pale text-sakura"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2M3 3l3 1M21 3l-3 1"/></svg></div>
+            <h3 class="mt-4 font-bold text-slate-800">夜間・土曜も受付</h3><p class="mt-2 text-sm leading-6 text-slate-600">平日は20時まで受付。お仕事などの都合に合わせて通院の相談ができます。受付時間はアクセス欄をご確認ください。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="scroll-mt-20 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">FLOW</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">施術の流れ</h2>
+        </div>
+        <ol class="relative mt-10 grid gap-6 md:grid-cols-5 md:gap-3">
+          <li class="relative rounded-2xl border border-sakura-line bg-white p-5 text-center shadow-sm">
+            <span class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-sakura text-sm font-bold text-white">1</span><h3 class="mt-4 font-bold text-slate-800">お問い合わせ</h3><p class="mt-2 text-sm leading-6 text-slate-600">電話またはWebからご相談ください。</p><span class="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-2xl text-sakura md:block" aria-hidden="true">→</span>
+          </li>
+          <li class="relative rounded-2xl border border-sakura-line bg-white p-5 text-center shadow-sm">
+            <span class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-sakura text-sm font-bold text-white">2</span><h3 class="mt-4 font-bold text-slate-800">受付・問診</h3><p class="mt-2 text-sm leading-6 text-slate-600">事故の状況や気になる症状を伺います。</p><span class="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-2xl text-sakura md:block" aria-hidden="true">→</span>
+          </li>
+          <li class="relative rounded-2xl border border-sakura-line bg-white p-5 text-center shadow-sm">
+            <span class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-sakura text-sm font-bold text-white">3</span><h3 class="mt-4 font-bold text-slate-800">検査・説明</h3><p class="mt-2 text-sm leading-6 text-slate-600">身体の状態を確認し、方針をご説明します。</p><span class="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-2xl text-sakura md:block" aria-hidden="true">→</span>
+          </li>
+          <li class="relative rounded-2xl border border-sakura-line bg-white p-5 text-center shadow-sm">
+            <span class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-sakura text-sm font-bold text-white">4</span><h3 class="mt-4 font-bold text-slate-800">施術</h3><p class="mt-2 text-sm leading-6 text-slate-600">状態やご希望に合わせて施術を行います。</p><span class="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-2xl text-sakura md:block" aria-hidden="true">→</span>
+          </li>
+          <li class="rounded-2xl border border-sakura-line bg-white p-5 text-center shadow-sm">
+            <span class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-sakura text-sm font-bold text-white">5</span><h3 class="mt-4 font-bold text-slate-800">連絡サポート</h3><p class="mt-2 text-sm leading-6 text-slate-600">保険会社への連絡や今後の流れをご案内します。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="price" class="scroll-mt-20 bg-sakura-pale py-16 sm:py-20">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">PRICE</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">料金案内</h2>
+        </div>
+        <div class="mt-8 rounded-3xl bg-sakura p-7 text-center text-white shadow-md sm:p-10">
+          <p class="text-sm font-semibold tracking-wide">交通事故による施術</p>
+          <p class="mt-2 text-3xl font-bold sm:text-4xl">自己負担 0円</p>
+          <p class="mt-3 text-sm text-white/90">※自賠責保険の適用条件を満たす場合</p>
+        </div>
+        <div class="mt-8 rounded-2xl border border-sakura-line bg-white p-5 sm:p-8">
+          <h3 class="mb-4 font-bold text-slate-800">通常料金</h3>
+          <!-- TODO: 下記料金はサンプルです。公開前に実際の料金へ差し替え -->
+          <div class="overflow-hidden rounded-xl border border-slate-200">
+            <table class="w-full table-fixed border-collapse text-left text-sm sm:text-base">
+              <caption class="sr-only">通常施術の料金表</caption>
+              <tbody>
+                <tr class="border-b border-slate-200"><th scope="row" class="w-2/3 break-words bg-slate-50 px-3 py-4 font-medium sm:px-5">初診料</th><td class="break-words px-3 py-4 text-right font-semibold sm:px-5">¥3,000</td></tr>
+                <tr class="border-b border-slate-200"><th scope="row" class="break-words bg-slate-50 px-3 py-4 font-medium sm:px-5">施術料（1回）</th><td class="break-words px-3 py-4 text-right font-semibold sm:px-5">¥4,500</td></tr>
+                <tr><th scope="row" class="break-words bg-slate-50 px-3 py-4 font-medium sm:px-5">骨盤矯正</th><td class="break-words px-3 py-4 text-right font-semibold sm:px-5">¥5,500</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs leading-5 text-slate-500">表示料金はサンプルです。実際の料金や保険適用の可否は、受付時にご確認ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 施術料金シミュレーター -->
+    <section id="simulator" class="scroll-mt-20 py-16 sm:py-20" aria-labelledby="simulator-title">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">SIMULATOR</p>
+          <h2 id="simulator-title" class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">施術料金シミュレーター</h2>
+          <p class="mt-4 leading-7 text-slate-600">症状・保険の種類・通院頻度を選ぶと、料金の目安がすぐに表示されます。</p>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+          <!-- 入力エリア -->
+          <form id="sim-form" class="space-y-7 rounded-2xl border border-sakura-line bg-white p-5 shadow-sm sm:p-7" onsubmit="return false;">
+            <fieldset>
+              <legend class="font-bold text-slate-800">1. 症状 <span class="ml-1 text-xs font-normal text-slate-500">（複数選択可）</span></legend>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <label class="sim-option cursor-pointer rounded-full border border-sakura-line px-4 py-2.5 text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="checkbox" name="symptom" value="neck" class="sr-only" checked>首の痛み</label>
+                <label class="sim-option cursor-pointer rounded-full border border-sakura-line px-4 py-2.5 text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="checkbox" name="symptom" value="back" class="sr-only">腰痛</label>
+                <label class="sim-option cursor-pointer rounded-full border border-sakura-line px-4 py-2.5 text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="checkbox" name="symptom" value="shoulder" class="sr-only">肩こり</label>
+                <label class="sim-option cursor-pointer rounded-full border border-sakura-line px-4 py-2.5 text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="checkbox" name="symptom" value="headache" class="sr-only">頭痛</label>
+                <label class="sim-option cursor-pointer rounded-full border border-sakura-line px-4 py-2.5 text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="checkbox" name="symptom" value="numbness" class="sr-only">しびれ</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="font-bold text-slate-800">2. 保険の種類</legend>
+              <div class="mt-3 grid grid-cols-3 gap-2">
+                <label class="cursor-pointer rounded-xl border border-sakura-line px-2 py-3 text-center text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="radio" name="insurance" value="jibaiseki" class="sr-only" checked>自賠責保険</label>
+                <label class="cursor-pointer rounded-xl border border-sakura-line px-2 py-3 text-center text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="radio" name="insurance" value="health" class="sr-only">健康保険</label>
+                <label class="cursor-pointer rounded-xl border border-sakura-line px-2 py-3 text-center text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="radio" name="insurance" value="self" class="sr-only">自費</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="font-bold text-slate-800">3. 希望する通院頻度</legend>
+              <div class="mt-3 grid grid-cols-3 gap-2">
+                <label class="cursor-pointer rounded-xl border border-sakura-line px-2 py-3 text-center text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="radio" name="frequency" value="1" class="sr-only">週1回</label>
+                <label class="cursor-pointer rounded-xl border border-sakura-line px-2 py-3 text-center text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="radio" name="frequency" value="2" class="sr-only" checked>週2回</label>
+                <label class="cursor-pointer rounded-xl border border-sakura-line px-2 py-3 text-center text-sm transition has-[:checked]:border-sakura has-[:checked]:bg-sakura has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sakura/40"><input type="radio" name="frequency" value="3" class="sr-only">週3回</label>
+              </div>
+            </fieldset>
+          </form>
+
+          <!-- 結果エリア（入力に合わせてリアルタイムに更新） -->
+          <div class="flex flex-col rounded-2xl border border-sakura-line bg-sakura-pale p-5 sm:p-7">
+            <!-- 自賠責保険の強調表示（自賠責を選ぶと色が濃くなる） -->
+            <div id="sim-jibaiseki" class="rounded-xl border border-sakura bg-white px-4 py-4 text-center text-sakura-dark transition">
+              <p class="text-sm font-bold">自賠責保険の場合は</p>
+              <p class="mt-1 text-2xl font-bold sm:text-3xl">自己負担 0円<sup class="ml-1 text-xs">*</sup></p>
+            </div>
+
+            <div aria-live="polite">
+              <p id="sim-empty" class="mt-6 hidden rounded-lg bg-white px-4 py-3 text-center text-sm text-slate-600">症状を1つ以上選択してください。</p>
+              <dl class="mt-6 divide-y divide-sakura-line text-sm">
+                <div class="flex items-baseline justify-between gap-4 py-3">
+                  <dt class="text-slate-600">1回あたりの施術料金</dt>
+                  <dd class="text-lg font-bold text-slate-800"><span id="sim-per-visit">—</span></dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-4 py-3">
+                  <dt class="text-slate-600">月額の目安 <span id="sim-visits" class="text-xs text-slate-500"></span></dt>
+                  <dd class="text-lg font-bold text-slate-800"><span id="sim-monthly">—</span></dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-4 py-3">
+                  <dt class="font-bold text-sakura-dark">自己負担額<span class="block text-xs font-normal text-slate-500">（保険適用後・1回／月額）</span></dt>
+                  <dd class="text-right">
+                    <span id="sim-burden-visit" class="block text-2xl font-bold text-sakura-dark sm:text-3xl">—</span>
+                    <span id="sim-burden-monthly" class="mt-1 block text-sm font-bold text-sakura-dark">—</span>
+                  </dd>
+                </div>
+              </dl>
+              <p id="sim-note" class="mt-2 hidden text-xs leading-5 text-slate-500"></p>
+            </div>
+
+            <a href="#reservation" class="mt-6 inline-flex items-center justify-center rounded-full bg-sakura px-7 py-4 font-bold text-white shadow-sm transition hover:bg-sakura-dark">無料相談はこちら <span class="ml-2" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <ul class="mt-6 space-y-1 text-xs leading-5 text-slate-500">
+          <li>*自賠責保険の適用条件を満たす場合。事故状況や保険会社の判断により異なります。</li>
+          <li>※表示金額は目安です。実際の料金は検査・問診のうえでご案内します。月額は1か月＝4週で計算しています。</li>
+          <li>※健康保険は急性のけが（捻挫・打撲など）が対象です。慢性的な肩こりは健康保険の対象外のため、自費として計算しています。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="voices" class="scroll-mt-20 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">VOICE</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">患者様の声</h2>
+        </div>
+        <!-- TODO: 掲載内容はサンプルです。公開前に許諾を得た実際の声へ差し替え -->
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-sakura-line bg-white p-6 shadow-sm"><p class="text-xs font-semibold text-sakura">40代・女性・M</p><p class="mt-4 leading-7 text-slate-600">事故後の首の違和感について相談しました。説明を聞いて、通院や手続きの流れがわかり安心しました。</p></article>
+          <article class="rounded-2xl border border-sakura-line bg-white p-6 shadow-sm"><p class="text-xs font-semibold text-sakura">30代・男性・K</p><p class="mt-4 leading-7 text-slate-600">仕事の都合を相談でき、無理のない通院方法を一緒に考えてもらえました。丁寧に話を聞いてくれました。</p></article>
+          <article class="rounded-2xl border border-sakura-line bg-white p-6 shadow-sm"><p class="text-xs font-semibold text-sakura">50代・女性・S</p><p class="mt-4 leading-7 text-slate-600">保険会社への連絡でわからないことを確認できました。身体の状態についても落ち着いて相談できました。</p></article>
+        </div>
+        <p class="mt-5 text-center text-xs leading-6 text-slate-500">※個人の感想であり、効果を保証するものではありません。<br>※掲載内容はサンプルです。公開前に実際の声へ差し替えてください。</p>
+      </div>
+    </section>
+
+    <section id="director" class="scroll-mt-20 bg-sakura-pale py-16 sm:py-20">
+      <div class="mx-auto grid max-w-5xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[280px_1fr]">
+        <div>
+          <!-- TODO: 実際の院長写真に差し替え -->
+          <img src="https://placehold.co/560x640/e4f1ec/1f6450?text=%E9%99%A2%E9%95%B7%E5%86%99%E7%9C%9F" alt="院長の写真プレースホルダー" width="560" height="640" loading="lazy" class="mx-auto aspect-[4/5] w-full max-w-xs rounded-3xl object-cover shadow-md">
+        </div>
+        <div>
+          <p class="text-sm font-bold tracking-widest text-sakura">MESSAGE</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">院長挨拶</h2>
+          <!-- TODO: 以下は架空の院長情報です。公開前に実際の情報へ差し替え -->
+          <p class="mt-5 text-lg font-bold text-slate-800">院長　桜井 健一</p>
+          <p class="mt-2 text-sm leading-6 text-slate-600">資格：柔道整復師<br>経歴：大阪市内の整骨院にて勤務後、さくら整骨院を開院（架空）</p>
+          <p class="mt-5 leading-7 text-slate-600">交通事故のあとに感じる不安や身体の不調は、一人ひとり異なります。まずはお話を丁寧に伺い、現在の状態や施術の選択肢、通院に関する疑問をわかりやすくお伝えします。どんな小さなことでもご相談ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="scroll-mt-20 py-16 sm:py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">FAQ</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">よくある質問</h2>
+        </div>
+        <div class="mt-8 space-y-3">
+          <details class="group rounded-2xl border border-sakura-line bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-800"><span><span class="mr-3 text-sakura">Q.</span>本当に自己負担0円ですか？</span><span class="text-sakura transition group-open:rotate-45" aria-hidden="true">＋</span></summary>
+            <p class="mt-4 border-t border-sakura-line pt-4 text-sm leading-7 text-slate-600">自賠責保険の適用条件を満たす場合は、窓口での自己負担なく施術を受けられることがあります。事故状況や保険の内容により異なるため、事前に確認してご案内します。</p>
+          </details>
+          <details class="group rounded-2xl border border-sakura-line bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-800"><span><span class="mr-3 text-sakura">Q.</span>整形外科と併用できますか？</span><span class="text-sakura transition group-open:rotate-45" aria-hidden="true">＋</span></summary>
+            <p class="mt-4 border-t border-sakura-line pt-4 text-sm leading-7 text-slate-600">併院についてご相談いただけます。医療機関での診察を続けながら通院する場合は、保険会社へ確認が必要なことがあります。</p>
+          </details>
+          <details class="group rounded-2xl border border-sakura-line bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-800"><span><span class="mr-3 text-sakura">Q.</span>事故から時間が経っていても相談できますか？</span><span class="text-sakura transition group-open:rotate-45" aria-hidden="true">＋</span></summary>
+            <p class="mt-4 border-t border-sakura-line pt-4 text-sm leading-7 text-slate-600">ご相談いただけます。事故からの期間や症状によって対応が異なりますので、現在の状況を伺い、必要に応じて医療機関の受診もご案内します。</p>
+          </details>
+          <details class="group rounded-2xl border border-sakura-line bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-800"><span><span class="mr-3 text-sakura">Q.</span>保険会社への連絡はどうすればよいですか？</span><span class="text-sakura transition group-open:rotate-45" aria-hidden="true">＋</span></summary>
+            <p class="mt-4 border-t border-sakura-line pt-4 text-sm leading-7 text-slate-600">通院を希望される旨を保険会社の担当者へお伝えください。連絡先や確認事項がわからない場合は、当院へご相談ください。</p>
+          </details>
+          <details class="group rounded-2xl border border-sakura-line bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-800"><span><span class="mr-3 text-sakura">Q.</span>予約は必要ですか？</span><span class="text-sakura transition group-open:rotate-45" aria-hidden="true">＋</span></summary>
+            <p class="mt-4 border-t border-sakura-line pt-4 text-sm leading-7 text-slate-600">予約優先制です。ご来院前にお電話またはWeb予約からご連絡いただくと、受付がスムーズです。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="scroll-mt-20 bg-sakura-pale py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="text-center">
+          <p class="text-sm font-bold tracking-widest text-sakura">ACCESS</p>
+          <h2 class="mt-2 text-2xl font-bold text-slate-800 sm:text-3xl">アクセス・診療時間</h2>
+        </div>
+        <div class="mt-10 grid gap-8 lg:grid-cols-2">
+          <div class="rounded-2xl border border-sakura-line bg-white p-6 sm:p-8">
+            <h3 class="text-lg font-bold text-slate-800">さくら整骨院</h3>
+            <dl class="mt-5 space-y-4 text-sm">
+              <div class="grid grid-cols-[5rem_1fr] gap-3"><dt class="font-bold text-slate-700">住所</dt><dd class="leading-6 text-slate-600"><!-- TODO: 実際の住所に差し替え -->大阪府大阪市北区〇〇 0-0-0</dd></div>
+              <div class="grid grid-cols-[5rem_1fr] gap-3"><dt class="font-bold text-slate-700">電話</dt><dd><!-- TODO: 実際の電話番号に差し替え --><a href="tel:06-0000-0000" class="text-sakura-dark underline">06-0000-0000</a></dd></div>
+              <div class="grid grid-cols-[5rem_1fr] gap-3"><dt class="font-bold text-slate-700">最寄り駅</dt><dd class="text-slate-600"><!-- TODO: 実際の最寄り駅・所要時間に差し替え -->〇〇駅より徒歩約5分</dd></div>
+            </dl>
+            <h3 class="mt-8 font-bold text-slate-800">診療時間</h3>
+            <div class="mt-3 overflow-hidden rounded-xl border border-slate-200">
+              <table class="w-full table-fixed border-collapse text-center text-xs sm:text-sm">
+                <caption class="sr-only">曜日ごとの診療時間</caption>
+                <thead class="bg-sakura-pale text-slate-700"><tr><th scope="col" class="px-1 py-3">曜日</th><th scope="col" class="px-1 py-3">午前<br><span class="font-normal">9:00–12:30</span></th><th scope="col" class="px-1 py-3">午後<br><span class="font-normal">15:00–20:00</span></th></tr></thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr><th scope="row" class="py-2.5 font-medium">月</th><td>○</td><td>○</td></tr>
+                  <tr><th scope="row" class="py-2.5 font-medium">火</th><td>○</td><td>○</td></tr>
+                  <tr><th scope="row" class="py-2.5 font-medium">水</th><td>○</td><td>○</td></tr>
+                  <tr><th scope="row" class="py-2.5 font-medium">木</th><td>○</td><td>○</td></tr>
+                  <tr><th scope="row" class="py-2.5 font-medium">金</th><td>○</td><td>○</td></tr>
+                  <tr><th scope="row" class="py-2.5 font-medium">土</th><td>○</td><td>▲</td></tr>
+                  <tr><th scope="row" class="py-2.5 font-medium">日・祝</th><td>×</td><td>×</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-3 text-xs leading-5 text-slate-500">凡例：○ 診療　▲ 予約制　× 休診<br><!-- TODO: 診療曜日・時間はサンプルです。実際の診療時間へ差し替え -->診療時間はサンプルです。公開前に実際の情報へ差し替えてください。</p>
+          </div>
+          <div class="space-y-4">
+            <!-- TODO: 公開前に実際の地図またはGoogleマップ埋め込みへ差し替え -->
+            <img src="https://placehold.co/900x620/e4f1ec/1f6450?text=%E5%9C%B0%E5%9B%B3%E3%82%A8%E3%83%AA%E3%82%A2" alt="さくら整骨院周辺の地図プレースホルダー" width="900" height="620" loading="lazy" class="h-full min-h-72 w-full rounded-2xl border border-sakura-line object-cover shadow-sm">
+            <p class="text-xs leading-5 text-slate-500">地図はプレースホルダーです。公開前に正確な所在地のGoogleマップへ差し替えてください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservation" class="scroll-mt-20 py-16 sm:py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="rounded-3xl bg-sakura-dark px-6 py-10 text-center text-white shadow-lg sm:px-12 sm:py-14">
+          <p class="text-sm font-bold tracking-widest text-white/75">CONTACT</p>
+          <h2 class="mt-3 text-2xl font-bold sm:text-3xl">事故後の不調、お気軽にご相談ください</h2>
+          <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/85">症状や保険のことなど、まずはご相談ください。状態を伺い、今後の流れをご案内します。</p>
+          <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <!-- TODO: 実際の電話番号に差し替え -->
+            <a href="tel:06-0000-0000" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 font-bold text-sakura-dark hover:bg-sakura-pale">電話する 06-0000-0000</a>
+            <!-- TODO: 実際のWeb予約URLに差し替え -->
+            <a href="https://example.com/reserve" class="inline-flex items-center justify-center rounded-full border border-white/70 px-7 py-4 font-bold text-white hover:bg-white/10">Web予約はこちら</a>
+          </div>
+          <p class="mt-4 text-xs text-white/75">受付時間：平日 9:00–12:30 / 15:00–20:00（サンプル）</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-sakura-line bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div><p class="font-bold text-sakura-dark">さくら整骨院</p><p class="mt-1 text-slate-500"><!-- TODO: 実際の住所に差し替え -->大阪府大阪市北区〇〇 0-0-0</p></div>
+      <p class="text-xs text-slate-500">© 2026 さくら整骨院</p>
+    </div>
+  </footer>
+
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-sakura-line bg-white p-2 shadow-[0_-4px_16px_rgba(31,100,80,0.10)] md:hidden">
+    <!-- TODO: 実際の電話番号に差し替え -->
+    <a href="tel:06-0000-0000" class="mx-1 inline-flex items-center justify-center rounded-xl bg-sakura-dark px-3 py-3 text-sm font-bold text-white">電話する</a>
+    <!-- TODO: 実際のWeb予約URLに差し替え -->
+    <a href="https://example.com/reserve" class="mx-1 inline-flex items-center justify-center rounded-xl bg-sakura px-3 py-3 text-sm font-bold text-white">Web予約</a>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const siteNav = document.getElementById("site-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "メニューを開く" : "メニューを閉じる");
+      siteNav.classList.toggle("hidden", isOpen);
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "メニューを開く");
+        siteNav.classList.add("hidden");
+      });
+    });
+
+    // ===== 施術料金シミュレーター =====
+    // TODO: 料金・負担割合はサンプルです。実際の料金体系に差し替え
+    const BASE_FEE = 2000; // 基本施術料（1回）
+    const SYMPTOM_FEES = {
+      neck: 1500,     // 首の痛み
+      back: 1500,     // 腰痛
+      shoulder: 1000, // 肩こり
+      headache: 1000, // 頭痛
+      numbness: 1500  // しびれ
+    };
+    const HEALTH_UNCOVERED = ["shoulder"]; // 健康保険の対象外（慢性的な肩こり）
+    const BURDEN_RATES = { jibaiseki: 0, health: 0.3, self: 1 }; // 自己負担の割合
+    const WEEKS_PER_MONTH = 4;
+
+    const simForm = document.getElementById("sim-form");
+    const simJibaiseki = document.getElementById("sim-jibaiseki");
+
+    function formatYen(value) {
+      return "¥" + value.toLocaleString("ja-JP");
+    }
+
+    // 10円未満を四捨五入（保険の自己負担額の計算に合わせる）
+    function roundTo10(value) {
+      return Math.round(value / 10) * 10;
+    }
+
+    function updateSimulator() {
+      const symptoms = [...simForm.querySelectorAll('input[name="symptom"]:checked')].map((input) => input.value);
+      const insurance = simForm.querySelector('input[name="insurance"]:checked').value;
+      const visits = Number(simForm.querySelector('input[name="frequency"]:checked').value) * WEEKS_PER_MONTH;
+
+      // 自賠責保険を選んでいるときは強調表示を濃くする
+      const isJibaiseki = insurance === "jibaiseki";
+      simJibaiseki.classList.toggle("bg-sakura", isJibaiseki);
+      simJibaiseki.classList.toggle("text-white", isJibaiseki);
+      simJibaiseki.classList.toggle("bg-white", !isJibaiseki);
+      simJibaiseki.classList.toggle("text-sakura-dark", !isJibaiseki);
+
+      const empty = symptoms.length === 0;
+      document.getElementById("sim-empty").classList.toggle("hidden", !empty);
+      document.getElementById("sim-visits").textContent = `（月${visits}回）`;
+
+      if (empty) {
+        ["sim-per-visit", "sim-monthly", "sim-burden-visit", "sim-burden-monthly"].forEach((id) => {
+          document.getElementById(id).textContent = "—";
+        });
+        document.getElementById("sim-note").classList.add("hidden");
+        return;
+      }
+
+      const perVisit = BASE_FEE + symptoms.reduce((sum, key) => sum + SYMPTOM_FEES[key], 0);
+
+      // 自己負担額：健康保険の対象外の症状は自費（10割）で計算
+      let burdenPerVisit;
+      if (insurance === "health") {
+        const uncovered = symptoms
+          .filter((key) => HEALTH_UNCOVERED.includes(key))
+          .reduce((sum, key) => sum + SYMPTOM_FEES[key], 0);
+        burdenPerVisit = roundTo10((perVisit - uncovered) * BURDEN_RATES.health) + uncovered;
+      } else {
+        burdenPerVisit = roundTo10(perVisit * BURDEN_RATES[insurance]);
+      }
+
+      document.getElementById("sim-per-visit").textContent = formatYen(perVisit);
+      document.getElementById("sim-monthly").textContent = formatYen(perVisit * visits);
+      document.getElementById("sim-burden-visit").textContent = formatYen(burdenPerVisit) + " / 回";
+      document.getElementById("sim-burden-monthly").textContent = "月額 " + formatYen(burdenPerVisit * visits);
+
+      // 補足メッセージ
+      const note = document.getElementById("sim-note");
+      if (insurance === "health" && symptoms.some((key) => HEALTH_UNCOVERED.includes(key))) {
+        note.textContent = "※肩こりの施術分は健康保険の対象外のため、自費で計算しています。";
+        note.classList.remove("hidden");
+      } else if (isJibaiseki) {
+        note.textContent = "※自賠責保険の適用条件を満たす場合、窓口でのお支払いはありません。";
+        note.classList.remove("hidden");
+      } else {
+        note.classList.add("hidden");
+      }
+    }
+
+    // 入力が変わるたびにリアルタイムで再計算
+    simForm.addEventListener("change", updateSimulator);
+    updateSimulator();
+  </script>
+</body>
+</html>

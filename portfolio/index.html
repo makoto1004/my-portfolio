@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LP制作から予約システム、料金シミュレーター、フォームまで一括対応するWeb制作フリーランスのポートフォリオです。">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Your Name | LP＋Webシステム構築">
+  <meta property="og:description" content="集客できるLPと業務を効率化するWebシステムをまとめて制作します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/"><!-- TODO: 実際の情報に差し替え -->
+  <meta property="og:image" content="https://placehold.co/1200x630/111111/34d399?text=Your+Name"><!-- TODO: 実際の情報に差し替え -->
+  <meta property="og:site_name" content="Your Name">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Name | LP＋Webシステム構築">
+  <meta name="twitter:description" content="LP制作から予約システム、料金シミュレーター、フォームまで一括対応。">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/111111/34d399?text=Your+Name"><!-- TODO: 実際の情報に差し替え -->
+  <title>Your Name | LP＋Webシステム構築</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#0a0a0a",
+            panel: "#161616",
+            accent: "#34d399"
+          },
+          fontFamily: {
+            sans: ['Inter', '"Hiragino Sans"', '"Noto Sans JP"', '"Yu Gothic"', "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body { background: #0a0a0a; color: #d4d4d4; }
+    .card-hover { transition: transform .2s ease, border-color .2s ease, background-color .2s ease; }
+    .card-hover:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.24); }
+    .nav-link { transition: color .2s ease; }
+    .nav-link:hover { color: #34d399; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#top" class="text-sm font-semibold tracking-wide text-white">Your Name<span class="ml-2 text-accent">.</span></a><!-- TODO: 実際の情報に差し替え -->
+      <button id="menu-button" class="inline-flex items-center justify-center rounded-lg border border-white/10 p-2 text-white md:hidden" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="メニューを開く">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav id="site-menu" class="absolute left-0 right-0 top-full hidden border-b border-white/10 bg-ink px-5 py-5 md:static md:block md:border-0 md:bg-transparent md:p-0" aria-label="メインナビゲーション">
+        <ul class="flex flex-col gap-5 text-sm md:flex-row md:items-center md:gap-7">
+          <li><a class="nav-link" href="#services">できること</a></li>
+          <li><a class="nav-link" href="#works">制作実績</a></li>
+          <li><a class="nav-link" href="#pricing">料金目安</a></li>
+          <li><a class="nav-link" href="#flow">制作の流れ</a></li>
+          <li><a class="inline-flex rounded-full bg-accent px-5 py-2.5 font-semibold text-ink hover:bg-emerald-300" href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden border-b border-white/10">
+      <div class="pointer-events-none absolute -right-32 top-10 h-96 w-96 rounded-full bg-accent/10 blur-3xl"></div>
+      <div class="relative mx-auto max-w-7xl px-5 pb-24 pt-36 md:pb-32 md:pt-48 lg:px-8">
+        <p class="mb-6 text-xs font-semibold uppercase tracking-[.25em] text-accent">LP Design & Web Systems</p>
+        <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">集客できるLP＋業務を効率化するシステム、<span class="text-accent">まとめて作ります</span></h1>
+        <p class="mt-7 max-w-2xl text-base leading-8 text-neutral-400 md:text-lg">伝わるページづくりから、予約・料金シミュレーター・フォームなどの動く機能まで一括対応。お客様の目的に合わせて、使いやすいWeb体験を形にします。</p>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a href="#works" class="rounded-full bg-accent px-7 py-3.5 text-center text-sm font-semibold text-ink transition hover:bg-emerald-300">制作実績を見る</a>
+          <a href="#contact" class="rounded-full border border-white/20 px-7 py-3.5 text-center text-sm font-semibold text-white transition hover:border-white/40">お問い合わせ</a>
+        </div>
+        <div class="mt-12 flex flex-wrap gap-2" aria-label="対応技術">
+          <span class="rounded-full border border-white/10 px-3 py-1.5 text-xs text-neutral-400">HTML</span>
+          <span class="rounded-full border border-white/10 px-3 py-1.5 text-xs text-neutral-400">Tailwind CSS</span>
+          <span class="rounded-full border border-white/10 px-3 py-1.5 text-xs text-neutral-400">JavaScript</span>
+          <span class="rounded-full border border-white/10 px-3 py-1.5 text-xs text-neutral-400">Calendly</span>
+          <span class="rounded-full border border-white/10 px-3 py-1.5 text-xs text-neutral-400">Formspree</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="mx-auto max-w-7xl px-5 py-20 md:py-28 lg:px-8">
+      <div class="mb-12 max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[.22em] text-accent">What I Do</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">できること</h2>
+        <p class="mt-4 leading-7 text-neutral-400">見た目だけでなく、問い合わせや業務につながる機能までまとめて設計・制作します。</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="card-hover rounded-2xl border border-white/10 bg-panel p-6">
+          <svg class="h-8 w-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 6.5h.01M11 6.5h.01"/></svg>
+          <h3 class="mt-5 text-lg font-semibold text-white">LP制作</h3><p class="mt-3 text-sm leading-6 text-neutral-400">サービスの魅力と導線を整理し、スマートフォンにも見やすいページを制作します。</p><p class="mt-4 text-xs text-neutral-500">例：美容院・店舗・サービス紹介</p>
+        </article>
+        <article class="card-hover rounded-2xl border border-white/10 bg-panel p-6">
+          <svg class="h-8 w-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 17h6"/></svg>
+          <h3 class="mt-5 text-lg font-semibold text-white">予約システム構築</h3><p class="mt-3 text-sm leading-6 text-neutral-400">外部予約ツールの埋め込みなど、予約受付の流れをわかりやすく整えます。</p><p class="mt-4 text-xs text-neutral-500">例：Calendly予約・来店相談予約</p>
+        </article>
+        <article class="card-hover rounded-2xl border border-white/10 bg-panel p-6">
+          <svg class="h-8 w-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v18M17 7.5c0-1.4-1.9-2.5-4.5-2.5S8 6.1 8 7.5 9.9 10 12.5 10 17 11.1 17 12.5 15.1 15 12.5 15 8 13.9 8 12.5"/><circle cx="12" cy="12" r="10"/></svg>
+          <h3 class="mt-5 text-lg font-semibold text-white">料金シミュレーター</h3><p class="mt-3 text-sm leading-6 text-neutral-400">条件を選ぶと料金の目安がわかる、検討を助ける計算機能を実装します。</p><p class="mt-4 text-xs text-neutral-500">例：施術内容・オプション料金計算</p>
+        </article>
+        <article class="card-hover rounded-2xl border border-white/10 bg-panel p-6">
+          <svg class="h-8 w-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6M7 16h4"/></svg>
+          <h3 class="mt-5 text-lg font-semibold text-white">フォーム構築</h3><p class="mt-3 text-sm leading-6 text-neutral-400">入力チェックや送信完了表示を備えたフォームで、相談受付をスムーズにします。</p><p class="mt-4 text-xs text-neutral-500">例：問い合わせ・予約リクエスト</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="works" class="border-y border-white/10 bg-[#0d0d0d]">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 lg:px-8">
+        <div class="mb-12">
+          <p class="text-xs font-semibold uppercase tracking-[.22em] text-accent">Selected Works</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">制作実績</h2>
+          <p class="mt-4 text-neutral-400">ページの目的に合わせた構成と、予約・計算・問い合わせなどの機能を制作しています。</p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <a class="card-hover group overflow-hidden rounded-2xl border border-white/10 bg-panel" href="../hair-salon-bloom/美容院.html" target="_blank" rel="noopener noreferrer">
+            <div class="relative"><img src="https://placehold.co/800x520/181818/d4d4d4?text=Hair+Salon+BLOOM" alt="Hair Salon BLOOMの美容院LPのサムネイル" width="800" height="520" loading="lazy" class="aspect-[8/5] w-full object-cover"><span class="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-accent">デモ作品</span></div>
+            <div class="p-5"><div class="flex items-start justify-between gap-3"><div><h3 class="font-semibold text-white group-hover:text-accent">Hair Salon BLOOM</h3><p class="mt-1 text-sm text-neutral-500">美容院LP</p></div><span class="shrink-0 rounded-full border border-accent/30 px-2.5 py-1 text-xs text-accent">機能付き</span></div><div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full bg-white/5 px-2.5 py-1 text-xs text-neutral-400">Calendly予約埋め込み</span><span class="rounded-full bg-white/5 px-2.5 py-1 text-xs text-neutral-400">LP</span></div></div>
+          </a>
+          <a class="card-hover group overflow-hidden rounded-2xl border border-white/10 bg-panel" href="../sakura-seikotsuin/整骨院.html" target="_blank" rel="noopener noreferrer">
+            <div class="relative"><img src="https://placehold.co/800x520/181818/d4d4d4?text=Sakura+Seikotsuin" alt="さくら整骨院の料金シミュレーター付きLPのサムネイル" width="800" height="520" loading="lazy" class="aspect-[8/5] w-full object-cover"><span class="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-accent">デモ作品</span></div>
+            <div class="p-5"><div class="flex items-start justify-between gap-3"><div><h3 class="font-semibold text-white group-hover:text-accent">さくら整骨院</h3><p class="mt-1 text-sm text-neutral-500">整骨院LP</p></div><span class="shrink-0 rounded-full border border-accent/30 px-2.5 py-1 text-xs text-accent">機能付き</span></div><div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full bg-white/5 px-2.5 py-1 text-xs text-neutral-400">料金シミュレーター</span><span class="rounded-full bg-white/5 px-2.5 py-1 text-xs text-neutral-400">LP</span></div></div>
+          </a>
+          <a class="card-hover group overflow-hidden rounded-2xl border border-white/10 bg-panel" href="../wagyutei/飲食店.html" target="_blank" rel="noopener noreferrer">
+            <div class="relative"><img src="https://placehold.co/800x520/181818/d4d4d4?text=Wagyutei" alt="炭火焼肉 和牛亭の予約問い合わせフォーム付きLPのサムネイル" width="800" height="520" loading="lazy" class="aspect-[8/5] w-full object-cover"><span class="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-accent">デモ作品</span></div>
+            <div class="p-5"><div class="flex items-start justify-between gap-3"><div><h3 class="font-semibold text-white group-hover:text-accent">炭火焼肉 和牛亭</h3><p class="mt-1 text-sm text-neutral-500">飲食店LP</p></div><span class="shrink-0 rounded-full border border-accent/30 px-2.5 py-1 text-xs text-accent">機能付き</span></div><div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full bg-white/5 px-2.5 py-1 text-xs text-neutral-400">Formspree</span><span class="rounded-full bg-white/5 px-2.5 py-1 text-xs text-neutral-400">入力チェック</span></div></div>
+          </a>
+          <!-- TODO: 実際の制作実績ができたら準備中カードを差し替え -->
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-panel" aria-label="制作実績準備中">
+            <div class="relative"><img src="https://placehold.co/800x520/303030/777777?text=Coming+soon" alt="制作実績準備中のグレーのサムネイル" width="800" height="520" loading="lazy" class="aspect-[8/5] w-full object-cover grayscale"><span class="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-neutral-400">準備中</span></div><div class="p-5"><h3 class="font-semibold text-white">Coming soon</h3><p class="mt-1 text-sm text-neutral-500">次の制作実績を準備しています</p></div>
+          </article>
+          <!-- TODO: 実際の制作実績ができたら準備中カードを差し替え -->
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-panel" aria-label="制作実績準備中">
+            <div class="relative"><img src="https://placehold.co/800x520/303030/777777?text=Coming+soon" alt="制作実績準備中のグレーのサムネイル" width="800" height="520" loading="lazy" class="aspect-[8/5] w-full object-cover grayscale"><span class="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-neutral-400">準備中</span></div><div class="p-5"><h3 class="font-semibold text-white">Coming soon</h3><p class="mt-1 text-sm text-neutral-500">次の制作実績を準備しています</p></div>
+          </article>
+          <!-- TODO: 実際の制作実績ができたら準備中カードを差し替え -->
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-panel" aria-label="制作実績準備中">
+            <div class="relative"><img src="https://placehold.co/800x520/303030/777777?text=Coming+soon" alt="制作実績準備中のグレーのサムネイル" width="800" height="520" loading="lazy" class="aspect-[8/5] w-full object-cover grayscale"><span class="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs text-neutral-400">準備中</span></div><div class="p-5"><h3 class="font-semibold text-white">Coming soon</h3><p class="mt-1 text-sm text-neutral-500">次の制作実績を準備しています</p></div>
+          </article>
+        </div>
+        <p class="mt-7 text-xs text-neutral-500">※デモ作品は架空の店舗を想定して制作したサンプルです</p>
+      </div>
+    </section>
+
+    <section id="pricing" class="mx-auto max-w-7xl px-5 py-20 md:py-28 lg:px-8">
+      <div class="mb-12 text-center">
+        <p class="text-xs font-semibold uppercase tracking-[.22em] text-accent">Pricing</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">料金目安</h2>
+        <p class="mt-4 text-neutral-400">ご要望を伺い、必要な内容に合わせてお見積りします。</p>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-3">
+        <!-- TODO: 実際の情報に差し替え -->
+        <article class="card-hover rounded-2xl border border-white/10 bg-panel p-7"><h3 class="text-lg font-semibold text-white">LP基本</h3><p class="mt-5 text-3xl font-semibold text-white">¥50,000〜</p><!-- TODO: 実際の料金に差し替え --><ul class="mt-7 space-y-3 text-sm text-neutral-400"><li>・1ページのLP制作</li><li>・スマートフォン対応</li><li>・基本的なお問い合わせ導線</li><li>・公開までのサポート</li></ul></article>
+        <article class="card-hover relative rounded-2xl border border-accent/50 bg-[#132019] p-7 shadow-[0_0_40px_rgba(52,211,153,.08)]"><span class="absolute right-5 top-5 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-ink">おすすめ</span><h3 class="text-lg font-semibold text-white">LP＋機能</h3><p class="mt-5 text-3xl font-semibold text-white">¥100,000〜</p><!-- TODO: 実際の料金に差し替え --><ul class="mt-7 space-y-3 text-sm text-neutral-300"><li>・LP基本の内容</li><li>・予約、フォーム、計算機能から選択</li><li>・機能に合わせた画面設計</li><li>・動作確認と公開サポート</li></ul></article>
+        <article class="card-hover rounded-2xl border border-white/10 bg-panel p-7"><h3 class="text-lg font-semibold text-white">フルカスタム</h3><p class="mt-5 text-3xl font-semibold text-white">要相談</p><!-- TODO: 実際の料金に差し替え --><ul class="mt-7 space-y-3 text-sm text-neutral-400"><li>・複数ページや独自機能</li><li>・要件に合わせた設計・開発</li><li>・外部サービスとの連携</li><li>・運用方法のご相談</li></ul></article>
+      </div>
+      <p class="mt-6 text-center text-xs text-neutral-500">※価格は目安です。内容により変動します（税込/税別は要確認）</p>
+    </section>
+
+    <section id="flow" class="border-y border-white/10 bg-[#0d0d0d]">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 lg:px-8">
+        <div class="mb-12">
+          <p class="text-xs font-semibold uppercase tracking-[.22em] text-accent">Workflow</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">制作の流れ</h2>
+        </div>
+        <ol class="grid gap-8 md:grid-cols-5 md:gap-4">
+          <li class="relative border-l border-white/15 pl-5 md:border-l-0 md:border-t md:pl-0 md:pt-6"><span class="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-accent md:left-0 md:top-[-5px]"></span><p class="text-xs font-semibold tracking-widest text-accent">01</p><h3 class="mt-3 font-semibold text-white">ヒアリング</h3><p class="mt-2 text-sm leading-6 text-neutral-500">目的や必要な機能を伺います。</p></li>
+          <li class="relative border-l border-white/15 pl-5 md:border-l-0 md:border-t md:pl-0 md:pt-6"><span class="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-accent md:left-0 md:top-[-5px]"></span><p class="text-xs font-semibold tracking-widest text-accent">02</p><h3 class="mt-3 font-semibold text-white">構成・お見積り</h3><p class="mt-2 text-sm leading-6 text-neutral-500">内容と進め方をご提案します。</p></li>
+          <li class="relative border-l border-white/15 pl-5 md:border-l-0 md:border-t md:pl-0 md:pt-6"><span class="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-accent md:left-0 md:top-[-5px]"></span><p class="text-xs font-semibold tracking-widest text-accent">03</p><h3 class="mt-3 font-semibold text-white">デザイン・開発</h3><p class="mt-2 text-sm leading-6 text-neutral-500">ページと必要な機能を制作します。</p></li>
+          <li class="relative border-l border-white/15 pl-5 md:border-l-0 md:border-t md:pl-0 md:pt-6"><span class="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-accent md:left-0 md:top-[-5px]"></span><p class="text-xs font-semibold tracking-widest text-accent">04</p><h3 class="mt-3 font-semibold text-white">確認・修正</h3><p class="mt-2 text-sm leading-6 text-neutral-500">内容と動作をご確認いただきます。</p></li>
+          <li class="relative border-l border-white/15 pl-5 md:border-l-0 md:border-t md:pl-0 md:pt-6"><span class="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-accent md:left-0 md:top-[-5px]"></span><p class="text-xs font-semibold tracking-widest text-accent">05</p><h3 class="mt-3 font-semibold text-white">公開・サポート</h3><p class="mt-2 text-sm leading-6 text-neutral-500">公開後のご相談にも対応します。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="relative overflow-hidden">
+      <div class="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"></div>
+      <div class="relative mx-auto max-w-3xl px-5 py-24 text-center md:py-32">
+        <p class="text-xs font-semibold uppercase tracking-[.22em] text-accent">Contact</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">まずはお気軽にご相談ください</h2>
+        <p class="mx-auto mt-5 max-w-xl leading-7 text-neutral-400">「こんな機能は作れる？」「何から決めればいい？」といったご相談からお待ちしています。通常、2営業日以内の返信を目安にしています。</p>
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="mailto:hello@example.com" class="rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-ink transition hover:bg-emerald-300">メールでお問い合わせ</a><!-- TODO: 実際の情報に差し替え -->
+          <a href="https://coconala.com/users/example" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white/40">ココナラで相談</a><!-- TODO: 実際の情報に差し替え -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-7 text-sm sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <a href="#top" class="font-semibold text-white">Your Name<span class="ml-2 text-accent">.</span></a><!-- TODO: 実際の情報に差し替え -->
+      <p class="text-xs text-neutral-500">© <span id="copyright-year">2026</span> Your Name. All rights reserved.</p><!-- TODO: 実際の情報に差し替え -->
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menu-button");
+    const siteMenu = document.getElementById("site-menu");
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "メニューを開く" : "メニューを閉じる");
+      siteMenu.classList.toggle("hidden", isOpen);
+    });
+    siteMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "メニューを開く");
+        siteMenu.classList.add("hidden");
+      });
+    });
+  </script>
+</body>
+</html>

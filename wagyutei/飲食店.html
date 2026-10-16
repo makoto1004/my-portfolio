@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="福岡市中央区の炭火焼肉 和牛亭。産地直送のA5ランク黒毛和牛と個室で、接待や記念日に特別なひとときをお過ごしください。">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <!-- TODO: 実際の公開URL・OGP画像URLに差し替え -->
+  <meta property="og:title" content="炭火焼肉 和牛亭｜福岡市中央区">
+  <meta property="og:description" content="産地直送のA5ランク黒毛和牛と個室で、接待や記念日に特別なひとときを。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://placehold.co/1200x630/1a1a1a/c9a84c?text=Wagyu">
+  <meta property="og:site_name" content="炭火焼肉 和牛亭">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="炭火焼肉 和牛亭｜福岡市中央区">
+  <meta name="twitter:description" content="産地直送のA5ランク黒毛和牛と個室で、接待や記念日に特別なひとときを。">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/1a1a1a/c9a84c?text=Wagyu">
+
+  <title>炭火焼肉 和牛亭｜福岡市中央区</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: "#1a1a1a",
+            ink: "#111111",
+            panel: "#2a2a2a",
+            gold: "#c9a84c",
+            palegold: "#e6d3a3"
+          },
+          fontFamily: {
+            heading: ['"Shippori Mincho"', '"Yu Mincho"', "YuMincho", '"Hiragino Mincho ProN"', "serif"],
+            body: ['"Hiragino Sans"', '"Yu Gothic"', "YuGothic", "Meiryo", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+    }
+    body {
+      font-family: "Hiragino Sans", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: "Shippori Mincho", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif;
+    }
+    /* 日付ピッカーなどのブラウザ標準 UI を暗い配色にする */
+    #contact-form input, #contact-form select, #contact-form textarea { color-scheme: dark; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+  <!-- フォーム部品の共通スタイル（Tailwind の @apply でまとめる） -->
+  <style type="text/tailwindcss">
+    .form-label { @apply mb-2 block text-sm tracking-wider text-palegold; }
+    .form-required { @apply ml-2 bg-gold px-1.5 py-0.5 text-[10px] tracking-normal text-ink; }
+    .form-optional { @apply ml-2 border border-white/30 px-1.5 py-0.5 text-[10px] tracking-normal text-[#c9c9c9]; }
+    .form-input { @apply block w-full rounded-none border border-white/20 bg-ink px-4 py-3 text-base text-[#e5e5e5] placeholder:text-[#777] focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold; }
+    .form-input[aria-invalid="true"] { @apply border-red-400 focus:border-red-400 focus:ring-red-400; }
+    .form-error { @apply mt-2 text-xs text-red-300; }
+    .form-choice { @apply block cursor-pointer border border-white/20 px-2 py-3 text-center text-sm transition has-[:checked]:border-gold has-[:checked]:bg-gold has-[:checked]:text-ink has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-gold/50; }
+  </style>
+</head>
+<body class="bg-charcoal pb-16 text-[#e5e5e5] antialiased md:pb-0">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-gold/30 bg-ink/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+      <a href="#top" class="font-heading text-lg tracking-[0.14em] text-palegold sm:text-xl" aria-label="炭火焼肉 和牛亭 トップ">
+        炭火焼肉 和牛亭
+      </a>
+      <button id="menu-toggle" class="inline-flex items-center justify-center rounded border border-gold/50 p-2 text-palegold md:hidden" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="メニューを開く">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+      <nav id="site-nav" class="absolute left-0 right-0 top-full hidden border-b border-gold/30 bg-ink px-5 py-5 md:static md:block md:border-0 md:bg-transparent md:p-0" aria-label="メインナビゲーション">
+        <ul class="flex flex-col gap-4 text-sm tracking-wider md:flex-row md:items-center md:gap-6">
+          <li><a class="nav-link transition hover:text-palegold" href="#commitment">こだわり</a></li>
+          <li><a class="nav-link transition hover:text-palegold" href="#courses">コース</a></li>
+          <li><a class="nav-link transition hover:text-palegold" href="#menu">メニュー</a></li>
+          <li><a class="nav-link transition hover:text-palegold" href="#private-rooms">個室</a></li>
+          <li><a class="nav-link transition hover:text-palegold" href="#access">アクセス</a></li>
+          <li><a class="nav-link transition hover:text-palegold" href="#contact">お問い合わせ</a></li>
+          <li><a class="nav-link inline-flex items-center justify-center border border-gold bg-gold px-5 py-2 font-medium text-ink transition hover:bg-palegold" href="#reservation">ご予約</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="top" class="relative flex min-h-[90vh] scroll-mt-20 items-center justify-center overflow-hidden pt-16 md:min-h-screen">
+      <img src="https://placehold.co/1920x1080/2a2a2a/c9a84c?text=Wagyu" alt="炭火で焼き上げる和牛のイメージ" width="1920" height="1080" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/65 via-ink/55 to-ink/90"></div>
+      <div class="relative mx-auto max-w-4xl px-6 py-24 text-center">
+        <p class="mb-5 text-xs tracking-[0.35em] text-palegold sm:text-sm">SUMIBI YAKINIKU · FUKUOKA</p>
+        <h1 class="font-heading text-4xl leading-relaxed tracking-[0.12em] text-white sm:text-6xl md:text-7xl">至福の一皿を、<br>あなたに</h1>
+        <p class="mx-auto mt-6 max-w-xl text-sm leading-8 tracking-widest text-[#e5e5e5] sm:text-base">
+          A5ランク黒毛和牛を産地直送。<br class="sm:hidden">個室完備で、心ほどけるひとときを。
+        </p>
+        <!-- TODO: 産地・等級など、実際に確認できた表現へ差し替え -->
+        <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="#reservation" class="border border-gold bg-gold px-8 py-4 text-sm tracking-widest text-ink transition hover:bg-palegold">ご予約はこちら</a>
+          <!-- TODO: 実際の電話番号に差し替え -->
+          <a href="tel:0920000000" class="border border-white/60 bg-ink/30 px-8 py-4 text-sm tracking-widest text-white transition hover:border-palegold hover:text-palegold">電話で問い合わせる</a>
+        </div>
+      </div>
+      <a href="#commitment" class="absolute bottom-7 left-1/2 -translate-x-1/2 text-xs tracking-[0.25em] text-palegold" aria-label="こだわりへスクロール">SCROLL <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section id="commitment" class="scroll-mt-20 border-b border-gold/20 px-5 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">OUR COMMITMENT</p>
+          <h2 class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">和牛亭のこだわり</h2>
+          <p class="mt-5 text-sm leading-7 text-[#c9c9c9]">大切なひとときを彩る、三つのおもてなし。</p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3 md:gap-6">
+          <article class="group">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Quality" alt="丁寧に選んだ和牛のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105">
+            </div>
+            <p class="mt-6 text-xs tracking-[0.25em] text-gold">01 · QUALITY</p>
+            <h3 class="mt-2 font-heading text-2xl text-white">選び抜いた肉質</h3>
+            <p class="mt-4 text-sm leading-7 text-[#c9c9c9]">A5ランク黒毛和牛を産地から直送。部位ごとの魅力を引き出す切り方と焼き方でご提供します。</p>
+            <!-- TODO: 仕入れ産地・等級・提供内容を確認し、実際の情報に差し替え -->
+          </article>
+          <article class="group">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Private+Space" alt="落ち着いた個室空間のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105">
+            </div>
+            <p class="mt-6 text-xs tracking-[0.25em] text-gold">02 · SPACE</p>
+            <h3 class="mt-2 font-heading text-2xl text-white">くつろぎの個室</h3>
+            <p class="mt-4 text-sm leading-7 text-[#c9c9c9]">周りを気にせず過ごせる個室をご用意。ご接待や記念日、ご家族でのお食事にご利用いただけます。</p>
+          </article>
+          <article class="group">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Hospitality" alt="おもてなしの料理提供イメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105">
+            </div>
+            <p class="mt-6 text-xs tracking-[0.25em] text-gold">03 · HOSPITALITY</p>
+            <h3 class="mt-2 font-heading text-2xl text-white">心を込めたおもてなし</h3>
+            <p class="mt-4 text-sm leading-7 text-[#c9c9c9]">お食事のペースやご利用の目的に合わせ、心地よい時間をお過ごしいただけるようお手伝いします。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="scroll-mt-20 bg-ink px-5 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">COURSE</p>
+          <h2 class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">おすすめコース</h2>
+          <p class="mt-5 text-sm leading-7 text-[#c9c9c9]">ご会食から特別な夜まで、用途に合わせてお選びください。</p>
+        </div>
+        <!-- TODO: コース名・価格・品数・料理内容はサンプルです。実際の提供内容に差し替え -->
+        <div class="grid items-stretch gap-6 lg:grid-cols-3">
+          <article class="flex flex-col border border-white/15 bg-charcoal p-7 sm:p-8">
+            <p class="text-xs tracking-[0.25em] text-gold">COURSE 01</p>
+            <h3 class="mt-3 font-heading text-2xl text-white">彩 -いろどり-</h3>
+            <p class="mt-5 text-3xl text-palegold">¥8,800 <span class="text-sm text-[#c9c9c9]">税込・1名様</span></p>
+            <ul class="mt-6 flex-1 space-y-3 border-t border-white/15 pt-6 text-sm leading-6 text-[#d3d3d3]">
+              <li>・前菜三種</li><li>・季節のサラダ</li><li>・本日の焼肉盛り合わせ</li><li>・ご飯もの・デザート</li>
+            </ul>
+            <a href="#reservation" class="mt-8 block border border-gold px-5 py-3 text-center text-sm tracking-widest text-palegold transition hover:bg-gold hover:text-ink">このコースを予約</a>
+          </article>
+          <article class="relative flex flex-col border border-gold bg-charcoal p-7 shadow-[0_0_30px_rgba(201,168,76,0.12)] sm:p-8">
+            <span class="absolute right-5 top-0 -translate-y-1/2 bg-gold px-4 py-1 text-xs tracking-widest text-ink">おすすめ</span>
+            <p class="text-xs tracking-[0.25em] text-gold">COURSE 02</p>
+            <h3 class="mt-3 font-heading text-2xl text-white">雅 -みやび-</h3>
+            <p class="mt-5 text-3xl text-palegold">¥13,200 <span class="text-sm text-[#c9c9c9]">税込・1名様</span></p>
+            <ul class="mt-6 flex-1 space-y-3 border-t border-gold/30 pt-6 text-sm leading-6 text-[#d3d3d3]">
+              <li>・前菜四種</li><li>・季節の一品</li><li>・厳選部位の焼肉盛り合わせ</li><li>・食事・甘味</li>
+            </ul>
+            <a href="#reservation" class="mt-8 block border border-gold bg-gold px-5 py-3 text-center text-sm tracking-widest text-ink transition hover:bg-palegold">このコースを予約</a>
+          </article>
+          <article class="flex flex-col border border-white/15 bg-charcoal p-7 sm:p-8">
+            <p class="text-xs tracking-[0.25em] text-gold">COURSE 03</p>
+            <h3 class="mt-3 font-heading text-2xl text-white">極 -きわみ-</h3>
+            <p class="mt-5 text-3xl text-palegold">¥19,800 <span class="text-sm text-[#c9c9c9]">税込・1名様</span></p>
+            <ul class="mt-6 flex-1 space-y-3 border-t border-white/15 pt-6 text-sm leading-6 text-[#d3d3d3]">
+              <li>・季節の前菜盛り合わせ</li><li>・料理長おすすめの一品</li><li>・特選部位の焼肉盛り合わせ</li><li>・食事・甘味</li>
+            </ul>
+            <a href="#reservation" class="mt-8 block border border-gold px-5 py-3 text-center text-sm tracking-widest text-palegold transition hover:bg-gold hover:text-ink">このコースを予約</a>
+          </article>
+        </div>
+        <p class="mt-6 text-center text-xs leading-6 text-[#aaa]">※写真・コース内容はイメージです。仕入れ状況により内容が変更となる場合があります。</p>
+      </div>
+    </section>
+
+    <section id="menu" class="scroll-mt-20 px-4 py-20 sm:px-6 sm:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">MENU HIGHLIGHTS</p>
+          <h2 class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">メニューハイライト</h2>
+          <p class="mt-5 text-sm text-[#c9c9c9]">一皿ごとに、素材と季節を味わう。</p>
+        </div>
+        <!-- TODO: 料理名・説明・写真は提供メニューに合わせて差し替え -->
+        <div class="grid grid-cols-2 gap-3 sm:gap-5">
+          <article class="group overflow-hidden border border-white/10 bg-ink">
+            <div class="overflow-hidden"><img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Premium+Beef" alt="特選和牛の焼肉イメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <div class="p-4 sm:p-6"><h3 class="font-heading text-base text-white sm:text-xl">特選和牛盛り合わせ</h3><p class="mt-2 text-xs leading-5 text-[#c9c9c9] sm:text-sm">部位ごとの味わいを楽しむ一皿。</p></div>
+          </article>
+          <article class="group overflow-hidden border border-white/10 bg-ink">
+            <div class="overflow-hidden"><img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Sirloin" alt="サーロインの焼肉イメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <div class="p-4 sm:p-6"><h3 class="font-heading text-base text-white sm:text-xl">サーロイン</h3><p class="mt-2 text-xs leading-5 text-[#c9c9c9] sm:text-sm">口どけと旨みを楽しむおすすめ部位。</p></div>
+          </article>
+          <article class="group overflow-hidden border border-white/10 bg-ink">
+            <div class="overflow-hidden"><img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Assorted+Appetizer" alt="季節の前菜盛り合わせイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <div class="p-4 sm:p-6"><h3 class="font-heading text-base text-white sm:text-xl">季節の前菜</h3><p class="mt-2 text-xs leading-5 text-[#c9c9c9] sm:text-sm">旬の食材を取り入れた彩りの一皿。</p></div>
+          </article>
+          <article class="group overflow-hidden border border-white/10 bg-ink">
+            <div class="overflow-hidden"><img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Grilled+Vegetables" alt="炭火で焼く季節野菜のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <div class="p-4 sm:p-6"><h3 class="font-heading text-base text-white sm:text-xl">季節の焼き野菜</h3><p class="mt-2 text-xs leading-5 text-[#c9c9c9] sm:text-sm">炭火で引き出す野菜の甘み。</p></div>
+          </article>
+          <article class="group overflow-hidden border border-white/10 bg-ink">
+            <div class="overflow-hidden"><img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Beef+Sushi" alt="和牛寿司のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <div class="p-4 sm:p-6"><h3 class="font-heading text-base text-white sm:text-xl">和牛の握り</h3><p class="mt-2 text-xs leading-5 text-[#c9c9c9] sm:text-sm">和牛の旨みをシンプルに味わう一品。</p></div>
+          </article>
+          <article class="group overflow-hidden border border-white/10 bg-ink">
+            <div class="overflow-hidden"><img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Dessert" alt="食後のデザートのイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <div class="p-4 sm:p-6"><h3 class="font-heading text-base text-white sm:text-xl">季節の甘味</h3><p class="mt-2 text-xs leading-5 text-[#c9c9c9] sm:text-sm">食後のひとときを締めくくる甘味。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="private-rooms" class="scroll-mt-20 bg-ink px-5 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">PRIVATE ROOMS</p>
+          <h2 class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">個室のご案内</h2>
+          <p class="mt-5 text-sm text-[#c9c9c9]">記念日や接待など、さまざまなシーンに。</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="overflow-hidden border border-white/15">
+            <img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Private+Room+2" alt="2名用個室のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="p-6"><p class="text-xs tracking-widest text-gold">2名様用</p><h3 class="mt-2 font-heading text-xl text-white">おふたりの個室</h3><p class="mt-3 text-sm leading-6 text-[#c9c9c9]">記念日や大切な方とのお食事に。落ち着いた空間でゆっくりお過ごしいただけます。</p><p class="mt-4 border-t border-white/15 pt-4 text-xs leading-5 text-[#aaa]">設備：テーブル席（予定）</p></div>
+          </article>
+          <article class="overflow-hidden border border-white/15">
+            <img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Private+Room+4" alt="4名用個室のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="p-6"><p class="text-xs tracking-widest text-gold">4名様用</p><h3 class="mt-2 font-heading text-xl text-white">語らいの個室</h3><p class="mt-3 text-sm leading-6 text-[#c9c9c9]">ご家族のお祝いから少人数の接待まで、幅広い会食におすすめです。</p><p class="mt-4 border-t border-white/15 pt-4 text-xs leading-5 text-[#aaa]">設備：テーブル席（予定）</p></div>
+          </article>
+          <article class="overflow-hidden border border-white/15">
+            <img src="https://placehold.co/800x600/2a2a2a/c9a84c?text=Private+Room+8" alt="8名用個室のイメージ" width="800" height="600" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="p-6"><p class="text-xs tracking-widest text-gold">8名様用</p><h3 class="mt-2 font-heading text-xl text-white">ご会食の個室</h3><p class="mt-3 text-sm leading-6 text-[#c9c9c9]">ご接待やグループでの会食に。周囲を気にせずお話しいただけます。</p><p class="mt-4 border-t border-white/15 pt-4 text-xs leading-5 text-[#aaa]">設備：テーブル席（予定）</p></div>
+          </article>
+        </div>
+        <!-- TODO: 個室の実際の定員・用途・設備・画像に差し替え -->
+      </div>
+    </section>
+
+    <section id="voices" class="scroll-mt-20 px-5 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">GUEST VOICES</p>
+          <h2 class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">お客様の声</h2>
+        </div>
+        <!-- TODO: 以下は掲載用サンプルです。公開前に実際のお客様の声へ差し替え -->
+        <div class="grid gap-5 md:grid-cols-3">
+          <blockquote class="border border-white/15 bg-ink p-6">
+            <p class="text-xs tracking-widest text-gold">記念日 · 40代</p>
+            <p class="mt-4 text-sm leading-7 text-[#d5d5d5]">「個室でゆっくり過ごせて、料理も一品ずつ楽しめました。記念日にまた利用したいです。」</p>
+            <p class="mt-5 text-lg tracking-[0.15em] text-gold" aria-label="5つ星中5つ星">★★★★★</p>
+            <footer class="mt-2 text-xs text-[#aaa]">福岡市・K様</footer>
+          </blockquote>
+          <blockquote class="border border-white/15 bg-ink p-6">
+            <p class="text-xs tracking-widest text-gold">ご接待 · 50代</p>
+            <p class="mt-4 text-sm leading-7 text-[#d5d5d5]">「落ち着いた空間で会話がしやすく、会食にぴったりでした。丁寧な対応も印象に残っています。」</p>
+            <p class="mt-5 text-lg tracking-[0.15em] text-gold" aria-label="5つ星中5つ星">★★★★★</p>
+            <footer class="mt-2 text-xs text-[#aaa]">福岡市・M様</footer>
+          </blockquote>
+          <blockquote class="border border-white/15 bg-ink p-6">
+            <p class="text-xs tracking-widest text-gold">ご家族での会食 · 30代</p>
+            <p class="mt-4 text-sm leading-7 text-[#d5d5d5]">「家族で個室を利用しました。周りを気にせず過ごせて、特別な食事の時間になりました。」</p>
+            <p class="mt-5 text-lg tracking-[0.15em] text-gold" aria-label="5つ星中5つ星">★★★★★</p>
+            <footer class="mt-2 text-xs text-[#aaa]">福岡市・S様</footer>
+          </blockquote>
+        </div>
+        <p class="mt-6 text-center text-xs text-[#aaa]">※掲載内容はサンプルです。公開前に実際のお客様の声へ差し替えてください。</p>
+      </div>
+    </section>
+
+    <section id="access" class="scroll-mt-20 border-y border-gold/20 bg-ink px-5 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">ACCESS & HOURS</p>
+          <h2 class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">アクセス・営業時間</h2>
+        </div>
+        <div class="grid gap-10 lg:grid-cols-2">
+          <dl class="divide-y divide-white/15 text-sm">
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">住所</dt><dd class="leading-6 text-[#e5e5e5]">福岡県福岡市中央区〇〇 0-0-0 <!-- TODO: 実際の住所に差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">電話</dt><dd><a href="tel:0920000000" class="text-[#e5e5e5] hover:text-palegold">092-000-0000</a> <!-- TODO: 実際の電話番号に差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">最寄り駅</dt><dd class="text-[#e5e5e5]">〇〇駅より徒歩〇分 <!-- TODO: 実際の駅名・所要時間に差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">営業時間</dt><dd class="leading-7 text-[#e5e5e5]">ランチ 11:30〜14:30（L.O. 14:00）<br>ディナー 17:00〜23:00（L.O. 22:00）<!-- TODO: 実際の営業時間・ラストオーダーに差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">定休日</dt><dd class="text-[#e5e5e5]">不定休 <!-- TODO: 実際の定休日に差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">駐車場</dt><dd class="text-[#e5e5e5]">近隣に提携駐車場あり（詳細はお問い合わせください） <!-- TODO: 実際の駐車場情報に差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">席数</dt><dd class="text-[#e5e5e5]">〇席（個室〇室） <!-- TODO: 実際の席数に差し替え --></dd></div>
+            <div class="grid grid-cols-[7rem_1fr] gap-4 py-4"><dt class="text-palegold">お支払い</dt><dd class="text-[#e5e5e5]">現金・クレジットカード <!-- TODO: 実際の支払い方法に差し替え --></dd></div>
+          </dl>
+          <div class="min-h-72 overflow-hidden border border-gold/30">
+            <!-- TODO: 店舗の正確な位置を確認後、Googleマップの埋め込みに差し替え -->
+            <img src="https://placehold.co/1000x700/2a2a2a/e6d3a3?text=Map+Placeholder" alt="店舗周辺地図のプレースホルダー。Googleマップへ差し替え予定" width="1000" height="700" loading="lazy" class="h-full min-h-72 w-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservation" class="scroll-mt-20 px-5 py-20 text-center sm:py-28">
+      <div class="mx-auto max-w-3xl border border-gold/40 px-6 py-12 sm:px-12 sm:py-16">
+        <p class="text-xs tracking-[0.3em] text-gold">RESERVATION</p>
+        <h2 class="mt-4 font-heading text-3xl leading-relaxed tracking-widest text-white sm:text-4xl">特別なひとときを、<br>和牛亭で。</h2>
+        <p class="mt-5 text-sm leading-7 text-[#c9c9c9]">記念日のケーキ・花束のご用意も承ります。ご予約時にお気軽にご相談ください。</p>
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <!-- TODO: 実際の電話番号に差し替え -->
+          <a href="tel:0920000000" class="border border-gold px-8 py-4 text-sm tracking-widest text-palegold transition hover:bg-gold hover:text-ink">電話で予約する</a>
+          <!-- TODO: 実際のネット予約URLに差し替え -->
+          <a href="https://example.com/reserve" target="_blank" rel="noopener noreferrer" class="border border-gold bg-gold px-8 py-4 text-sm tracking-widest text-ink transition hover:bg-palegold">ネット予約</a>
+        </div>
+        <p class="mt-6 text-xs text-[#c9c9c9]">ご要望の詳細は<a href="#contact" class="mx-1 text-palegold underline underline-offset-4 hover:text-gold">お問い合わせフォーム</a>からも承ります。</p>
+      </div>
+    </section>
+
+    <!-- お問い合わせフォーム（送信処理は Formspree） -->
+    <section id="contact" class="scroll-mt-20 border-t border-gold/20 bg-ink px-4 py-20 sm:px-5 sm:py-28" aria-labelledby="contact-title">
+      <div class="mx-auto max-w-3xl">
+        <div class="mb-10 text-center">
+          <p class="text-xs tracking-[0.3em] text-gold">CONTACT</p>
+          <h2 id="contact-title" class="mt-3 font-heading text-3xl tracking-widest text-white sm:text-4xl">ご予約・お問い合わせ</h2>
+          <p class="mt-5 text-sm leading-7 text-[#c9c9c9]">内容を確認のうえ、担当者よりご連絡いたします。<br class="hidden sm:block">ご予約はご連絡をもって確定となります。</p>
+        </div>
+
+        <!-- TODO: action の「YOUR_FORM_ID」を Formspree で発行したフォームIDに差し替え（無料プランは月50件まで） -->
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate class="border border-gold/30 bg-charcoal p-5 sm:p-10">
+          <!-- エラーのまとめ表示 -->
+          <div id="form-error-summary" class="mb-6 hidden border border-red-400/60 bg-red-400/10 px-4 py-3 text-sm text-red-300" role="alert" tabindex="-1"></div>
+
+          <!-- Formspree 用の設定（メール件名・スパム対策） -->
+          <input type="hidden" name="_subject" value="【和牛亭】Webサイトからのお問い合わせ">
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label for="f-name" class="form-label">お名前<span class="form-required">必須</span></label>
+              <input id="f-name" name="お名前" type="text" autocomplete="name" placeholder="例）和牛 太郎" class="form-input" aria-describedby="f-name-error" required>
+              <p id="f-name-error" class="form-error hidden"></p>
+            </div>
+            <div>
+              <label for="f-tel" class="form-label">電話番号<span class="form-required">必須</span></label>
+              <input id="f-tel" name="電話番号" type="tel" inputmode="tel" autocomplete="tel" placeholder="例）090-1234-5678" class="form-input" aria-describedby="f-tel-error" required>
+              <p id="f-tel-error" class="form-error hidden"></p>
+            </div>
+            <div>
+              <label for="f-email" class="form-label">メールアドレス<span class="form-required">必須</span></label>
+              <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="例）info@example.com" class="form-input" aria-describedby="f-email-error" required>
+              <p id="f-email-error" class="form-error hidden"></p>
+            </div>
+            <div>
+              <label for="f-date" class="form-label">ご利用日</label>
+              <input id="f-date" name="ご利用日" type="date" class="form-input" aria-describedby="f-date-error">
+              <p id="f-date-error" class="form-error hidden"></p>
+            </div>
+            <div>
+              <label for="f-time" class="form-label">ご利用時間</label>
+              <select id="f-time" name="ご利用時間" class="form-input">
+                <option value="">選択してください</option>
+                <option>17:00</option><option>17:30</option><option>18:00</option><option>18:30</option>
+                <option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+                <option>21:00</option><option>21:30</option><option>22:00</option>
+              </select>
+            </div>
+            <div>
+              <label for="f-people" class="form-label">ご利用人数</label>
+              <select id="f-people" name="ご利用人数" class="form-input">
+                <option value="">選択してください</option>
+                <option>1名</option><option>2名</option><option>3名</option><option>4名</option><option>5名</option>
+                <option>6名</option><option>7名</option><option>8名</option><option>9名</option><option>10名</option>
+                <option>11名</option><option>12名</option><option>13名</option><option>14名</option><option>15名</option>
+                <option>16名</option><option>17名</option><option>18名</option><option>19名</option><option>20名</option>
+              </select>
+            </div>
+
+            <fieldset class="sm:col-span-2">
+              <legend class="form-label">ご利用目的</legend>
+              <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                <label class="form-choice"><input type="radio" name="ご利用目的" value="接待" class="sr-only">接待</label>
+                <label class="form-choice"><input type="radio" name="ご利用目的" value="記念日" class="sr-only">記念日</label>
+                <label class="form-choice"><input type="radio" name="ご利用目的" value="家族" class="sr-only">家族</label>
+                <label class="form-choice"><input type="radio" name="ご利用目的" value="その他" class="sr-only">その他</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="sm:col-span-2">
+              <legend class="form-label">個室のご希望</legend>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="form-choice"><input type="radio" name="個室希望" value="あり" class="sr-only">あり</label>
+                <label class="form-choice"><input type="radio" name="個室希望" value="なし" class="sr-only">なし</label>
+                <label class="form-choice"><input type="radio" name="個室希望" value="どちらでも" class="sr-only" checked>どちらでも</label>
+              </div>
+            </fieldset>
+
+            <div class="sm:col-span-2">
+              <label for="f-allergy" class="form-label">アレルギー・苦手な食材<span class="form-optional">任意</span></label>
+              <textarea id="f-allergy" name="アレルギー・苦手な食材" rows="4" placeholder="例）甲殻類アレルギーが1名います" class="form-input"></textarea>
+            </div>
+          </div>
+
+          <p class="mt-6 text-xs leading-6 text-[#aaa]">ご入力いただいた個人情報は、ご予約・お問い合わせへの対応にのみ使用します。</p>
+
+          <button id="contact-submit" type="submit" class="mt-6 w-full border border-gold bg-gold px-8 py-4 text-sm tracking-widest text-ink transition hover:bg-palegold disabled:cursor-wait disabled:opacity-60">
+            この内容で送信する
+          </button>
+        </form>
+
+        <!-- 送信完了メッセージ -->
+        <div id="contact-thanks" class="hidden border border-gold/40 bg-charcoal px-6 py-14 text-center" role="status" tabindex="-1">
+          <p class="text-xs tracking-[0.3em] text-gold">THANK YOU</p>
+          <p class="mt-4 font-heading text-2xl text-white">送信が完了しました</p>
+          <p class="mt-5 text-sm leading-7 text-[#c9c9c9]">お問い合わせいただき、ありがとうございます。<br>内容を確認のうえ、担当者よりご連絡いたします。</p>
+          <p class="mt-4 text-xs leading-6 text-[#aaa]">お急ぎの場合はお電話（<a href="tel:0920000000" class="text-palegold underline">092-000-0000</a>）にてご連絡ください。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gold/30 bg-ink px-5 py-10 text-center">
+    <a href="#top" class="font-heading text-xl tracking-[0.15em] text-palegold">炭火焼肉 和牛亭</a>
+    <p class="mt-3 text-xs text-[#bdbdbd]">福岡県福岡市中央区〇〇 0-0-0 <!-- TODO: 実際の住所に差し替え --></p>
+    <p class="mt-4 text-xs text-[#aaa]">お酒は20歳になってから。</p>
+    <p class="mt-5 text-xs text-[#888]">© <span id="copyright-year">2026</span> 炭火焼肉 和牛亭</p>
+  </footer>
+
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-gold/50 bg-ink md:hidden">
+    <!-- TODO: 実際の電話番号に差し替え -->
+    <a href="tel:0920000000" class="py-4 text-center text-sm tracking-widest text-palegold">電話予約</a>
+    <!-- TODO: 実際のネット予約URLに差し替え -->
+    <a href="https://example.com/reserve" target="_blank" rel="noopener noreferrer" class="border-l border-gold/30 bg-gold py-4 text-center text-sm tracking-widest text-ink">ネット予約</a>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const siteNav = document.getElementById("site-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      menuToggle.setAttribute("aria-label", isExpanded ? "メニューを開く" : "メニューを閉じる");
+      siteNav.classList.toggle("hidden", isExpanded);
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "メニューを開く");
+      });
+    });
+
+    // ===== お問い合わせフォーム（バリデーション＋Formspree への送信） =====
+    const contactForm = document.getElementById("contact-form");
+    const contactSubmit = document.getElementById("contact-submit");
+    const errorSummary = document.getElementById("form-error-summary");
+    const contactThanks = document.getElementById("contact-thanks");
+
+    const TEL_PATTERN = /^0\d{9,10}$/; // 0 から始まる 10〜11 桁（ハイフン・空白は除いて判定）
+    const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // 今日の日付を YYYY-MM-DD（端末のタイムゾーン）で返す
+    function getTodayString() {
+      const now = new Date();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+      return `${now.getFullYear()}-${month}-${day}`;
+    }
+
+    // 日付ピッカーで過去の日付を選べないようにする
+    document.getElementById("f-date").min = getTodayString();
+
+    // 各項目のチェック内容（エラーがあればメッセージ、なければ空文字を返す）
+    const validators = {
+      "f-name": (value) => (value ? "" : "お名前を入力してください。"),
+      "f-tel": (value) => {
+        if (!value) return "電話番号を入力してください。";
+        return TEL_PATTERN.test(value.replace(/[-\s()]/g, "")) ? "" : "電話番号の形式が正しくありません（例：090-1234-5678）。";
+      },
+      "f-email": (value) => {
+        if (!value) return "メールアドレスを入力してください。";
+        return EMAIL_PATTERN.test(value) ? "" : "メールアドレスの形式が正しくありません（例：info@example.com）。";
+      },
+      "f-date": (value) => (value && value < getTodayString() ? "過去の日付は選択できません。本日以降の日付を選択してください。" : "")
+    };
+
+    // 1項目をチェックしてエラー表示を切り替える
+    function validateField(id) {
+      const input = document.getElementById(id);
+      const message = validators[id](input.value.trim());
+      const errorText = document.getElementById(`${id}-error`);
+      errorText.textContent = message;
+      errorText.classList.toggle("hidden", !message);
+      input.setAttribute("aria-invalid", message ? "true" : "false");
+      return message;
+    }
+
+    // 入力欄から離れたとき・エラー表示中に入力し直したときにチェック
+    Object.keys(validators).forEach((id) => {
+      const input = document.getElementById(id);
+      input.addEventListener("blur", () => validateField(id));
+      input.addEventListener("input", () => {
+        if (input.getAttribute("aria-invalid") === "true") validateField(id);
+      });
+    });
+
+    function showSummary(message) {
+      errorSummary.textContent = message;
+      errorSummary.classList.remove("hidden");
+      errorSummary.focus();
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // すべての項目をチェックし、最初のエラー項目へ移動
+      const invalidIds = Object.keys(validators).filter((id) => validateField(id));
+      if (invalidIds.length > 0) {
+        showSummary(`入力内容に${invalidIds.length}件の誤りがあります。赤く表示された項目をご確認ください。`);
+        document.getElementById(invalidIds[0]).focus();
+        return;
+      }
+      errorSummary.classList.add("hidden");
+
+      contactSubmit.disabled = true;
+      contactSubmit.textContent = "送信中…";
+
+      try {
+        // Formspree に JSON で応答してもらい、ページ移動せずに結果を表示する
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        contactForm.reset();
+        contactForm.classList.add("hidden");
+        contactThanks.classList.remove("hidden");
+        contactThanks.focus();
+      } catch (error) {
+        showSummary("送信に失敗しました。時間をおいて再度お試しいただくか、お電話（092-000-0000）にてご連絡ください。");
+      } finally {
+        contactSubmit.disabled = false;
+        contactSubmit.textContent = "この内容で送信する";
+      }
+    });
+  </script>
+</body>
+</html>
